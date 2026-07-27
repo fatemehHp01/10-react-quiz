@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1b1d22;
+  font-family: sans-serif;
+  color: white;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz {
+  width: 700px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 42px;
+}
+
+.header p {
+  color: #999;
+  margin-top: 10px;
+}
+
+.progress {
+  margin-bottom: 40px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #333;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar::after {
+  content: "";
+  width: 35%;
+  height: 100%;
+  background: #00b894;
+  position: absolute;
+  left: 0;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  color: #aaa;
+}
+
+.question-box h2 {
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.answer {
+  background: #2d3139;
+  border: 2px solid transparent;
+  color: white;
+  padding: 18px;
+  border-radius: 12px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: .3s;
+  text-align: left;
+}
+
+.answer:hover {
+  transform: translateX(8px);
+  background: #3a3f48;
+}
+
+.answer.active {
+  border-color: #4dabf7;
+}
+
+.answer.correct {
+  background: #16a34a;
+}
+
+.answer.wrong {
+  background: #dc2626;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.btn {
+  background: #4dabf7;
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  opacity: .9;
+}
+
+.next {
+  background: #00b894;
+}
+/* start screen */
+.start-screen {
+  width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.start-screen h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.description {
+  color: #a8adb8;
+  line-height: 1.8;
+  font-size: 18px;
+  margin-bottom: 45px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 45px;
+}
+
+.card {
+  flex: 1;
+  background: #2a2e36;
+  padding: 25px;
+  border-radius: 14px;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card span {
+  display: block;
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #ddd;
+  font-size: 18px;
+}
+
+.start-btn {
+  border: none;
+  background: #4dabf7;
+  color: white;
+  padding: 18px 55px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.start-btn:hover {
+  background: #339af0;
+  transform: scale(1.05);
+}
