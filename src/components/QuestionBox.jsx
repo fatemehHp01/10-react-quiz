@@ -1,18 +1,27 @@
-import React from "react";
-
+import React, { useContext, useEffect } from "react";
+import Header from "./Header";
+import { AppContext } from "../App";
+import AnswerButton from "./AnswerButton";
 const QuestionBox = () => {
+  const { questions, dispatch } = useContext(AppContext);
+  useEffect(function () {
+    async function getData() {
+      try {
+        const response = await fetch("http://localhost:8000/questions");
+        const data = await response.json();
+        dispatch({ type: "getData", payload: data });
+      } catch (e) {}
+    }
+    getData();
+  }, []);
   return (
     <div className="question-box">
-      <h2>Which Hook is used for managing state in React?</h2>
-
+      <Header />
+      <h2>{questions[0]?.question}</h2>
       <div className="answers">
-        <button className="answer">useRef</button>
-
-        <button className="answer active">useState</button>
-
-        <button className="answer correct">useReducer</button>
-
-        <button className="answer wrong">useMemo</button>
+        {questions[0]?.options.map((option) => {
+          return <AnswerButton option={option} />;
+        })}
       </div>
     </div>
   );

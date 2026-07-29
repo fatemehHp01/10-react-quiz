@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "./Header";
 import Button from "./Button";
+import { AppContext } from "../App";
 const StartScreen = () => {
+  const { dispatch } = useContext(AppContext);
+  function changeStatus() {
+    dispatch({ type: "statusChange" });
+  }
   return (
     <div className="start-screen">
       <Header />
@@ -29,7 +34,9 @@ const StartScreen = () => {
         </div>
       </div>
 
-      <Button className="start-btn">Start Quiz →</Button>
+      <Button className="start-btn" handelCick={changeStatus}>
+        Start Quiz →
+      </Button>
     </div>
   );
 };

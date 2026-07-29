@@ -1,14 +1,11 @@
 import React from "react";
+import ProgressInfo from "./ProgressInfo";
 
 const Progress = () => {
   return (
     <div className="progress">
       <div className="progress-bar"></div>
-
-      <div className="progress-info">
-        <span>Question 3 / 15</span>
-        <span>30 Points</span>
-      </div>
+      <ProgressInfo />
     </div>
   );
 };
