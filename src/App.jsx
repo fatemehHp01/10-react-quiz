@@ -10,6 +10,7 @@ export const AppContext = createContext();
 const initialState = {
   questions: [],
   status: "loading",
+  activeQuestion: 0,
 };
 function reducer(state, action) {
   switch (action.type) {
@@ -26,7 +27,7 @@ function reducer(state, action) {
 }
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { status, questions } = state;
+  const { status, questions, activeQuestion } = state;
 
   useEffect(function () {
     async function getData() {
@@ -45,7 +46,7 @@ export default function App() {
   }, []);
 
   return (
-    <AppContext.Provider value={{ questions, dispatch }}>
+    <AppContext.Provider value={{ questions, dispatch, activeQuestion }}>
       <div className="app">
         {status === "ready" && <StartScreen />}
         {status === "loading" && <Spinner />}
