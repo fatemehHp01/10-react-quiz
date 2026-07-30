@@ -16,6 +16,9 @@ function reducer(state, action) {
     case "dataRecived": {
       return { ...state, questions: action.payload, status: "ready" };
     }
+    case "startQuiz": {
+      return { ...state, status: "active" };
+    }
     case "dataFeild": {
       return { ...state, status: "error" };
     }
@@ -46,7 +49,8 @@ export default function App() {
       <div className="app">
         {status === "ready" && <StartScreen />}
         {status === "loading" && <Spinner />}
-        {status === "error" && <Error />}
+        {status === "loading" && <Spinner />}
+        {status === "active" && <QuestionBox />}
       </div>
     </AppContext.Provider>
   );

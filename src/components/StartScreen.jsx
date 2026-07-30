@@ -3,10 +3,13 @@ import Header from "./Header";
 import Button from "./Button";
 import { AppContext } from "../App";
 const StartScreen = () => {
-  const { questions } = useContext(AppContext);
+  const { questions, dispatch } = useContext(AppContext);
   const points = questions.reduce((totalPoints, currentPoint) => {
     return totalPoints + currentPoint.points;
   }, 0);
+  function nexQuestion() {
+    dispatch({ type: "startQuiz" });
+  }
   return (
     <div className="start-screen">
       <Header />
@@ -35,7 +38,9 @@ const StartScreen = () => {
         </div>
       </div>
 
-      <Button className="start-btn">Start Quiz →</Button>
+      <Button className="start-btn" onClickHandel={nexQuestion}>
+        Start Quiz →
+      </Button>
     </div>
   );
 };
