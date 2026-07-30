@@ -44,7 +44,7 @@ export default function App() {
   return (
     <AppContext.Provider value={{ questions, dispatch }}>
       <div className="app">
-        {status === "ready" && <QuestionBox />}
+        {status === "ready" && <StartScreen />}
         {status === "loading" && <Spinner />}
         {status === "error" && <Error />}
       </div>

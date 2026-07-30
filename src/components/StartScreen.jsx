@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "./Header";
 import Button from "./Button";
+import { AppContext } from "../App";
 const StartScreen = () => {
+  const { questions } = useContext(AppContext);
+  const points = questions.reduce((totalPoints, currentPoint) => {
+    return totalPoints + currentPoint.points;
+  }, 0);
   return (
     <div className="start-screen">
       <Header />
 
       <p className="description">
-        Test your React knowledge with <strong>15 questions</strong>.
+        Test your React knowledge with{" "}
+        <strong>{questions.length} questions</strong>.
         <br />
         Each correct answer gives you <strong>10 points</strong>.
       </p>
@@ -15,7 +21,7 @@ const StartScreen = () => {
       <div className="info">
         <div className="card">
           <span>📚</span>
-          <p>15 Questions</p>
+          <p>{questions.length} Questions</p>
         </div>
 
         <div className="card">
@@ -25,7 +31,7 @@ const StartScreen = () => {
 
         <div className="card">
           <span>🏆</span>
-          <p>150 Points</p>
+          <p> {points} points</p>
         </div>
       </div>
 
