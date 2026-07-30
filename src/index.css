@@ -191,3 +191,32 @@ body {
   background: #339af0;
   transform: scale(1.05);
 }
+/* loader */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 120px;
+  gap: 24px;
+}
+
+.loader {
+  width: 90px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 10px solid #343a40;
+  border-right-color: #00c46a;
+  animation: rotate 1s linear infinite;
+}
+
+.loader-container p {
+  color: #ced4da;
+  font-size: 1.8rem;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

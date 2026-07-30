@@ -1,0 +1,89 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does HTML stand for?",
+      "options": [
+        "Hyper Text Markup Language",
+        "High Transfer Machine Language",
+        "Home Tool Markup Language",
+        "Hyperlink and Text Management Language"
+      ],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "id": 2,
+      "question": "Which CSS property changes the text color?",
+      "options": ["background-color", "font-color", "color", "text-style"],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "id": 3,
+      "question": "Which company developed React?",
+      "options": ["Google", "Microsoft", "Meta", "Amazon"],
+      "correctOption": 2,
+      "points": 20
+    },
+    {
+      "id": 4,
+      "question": "Which hook is used for state management?",
+      "options": ["useEffect", "useRef", "useState", "useMemo"],
+      "correctOption": 2,
+      "points": 15
+    },
+    {
+      "id": 5,
+      "question": "Which hook is used to perform side effects?",
+      "options": ["useReducer", "useEffect", "useContext", "useCallback"],
+      "correctOption": 1,
+      "points": 20
+    },
+    {
+      "id": 6,
+      "question": "What is JSX?",
+      "options": [
+        "A JavaScript database",
+        "A syntax extension for JavaScript",
+        "A CSS framework",
+        "A backend language"
+      ],
+      "correctOption": 1,
+      "points": 15
+    },
+    {
+      "id": 7,
+      "question": "Which hook is best for complex state logic?",
+      "options": ["useState", "useEffect", "useReducer", "useMemo"],
+      "correctOption": 2,
+      "points": 25
+    },
+    {
+      "id": 8,
+      "question": "Which method is commonly used to render lists in React?",
+      "options": ["filter()", "reduce()", "map()", "find()"],
+      "correctOption": 2,
+      "points": 15
+    },
+    {
+      "id": 9,
+      "question": "What is the virtual DOM?",
+      "options": [
+        "A copy of the real DOM kept in memory",
+        "A browser extension",
+        "A CSS engine",
+        "A backend API"
+      ],
+      "correctOption": 0,
+      "points": 25
+    },
+    {
+      "id": 10,
+      "question": "Which hook is used to memoize expensive calculations?",
+      "options": ["useCallback", "useMemo", "useRef", "useLayoutEffect"],
+      "correctOption": 1,
+      "points": 20
+    }
+  ]
+}
