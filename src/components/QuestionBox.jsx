@@ -4,7 +4,8 @@ import { AppContext } from "../App";
 import Answer from "./Answer";
 import Progress from "./Progress";
 const QuestionBox = () => {
-  const { questions, activeQuestion } = useContext(AppContext);
+  const { questions, activeQuestion, userAnswer, dispatch } =
+    useContext(AppContext);
   return (
     <div className="question-box">
       <Header />
@@ -15,6 +16,15 @@ const QuestionBox = () => {
           return <Answer option={option} key={option} index={index} />;
         })}
       </div>
+      {userAnswer !== null ? (
+        <button
+          className="next-btn"
+          onClick={() => dispatch({ type: "nexQuestion" })}
+        >
+          Next
+          <span>→</span>
+        </button>
+      ) : null}
     </div>
   );
 };

@@ -36,6 +36,13 @@ function reducer(state, action) {
           : state.points,
       };
     }
+    case "nexQuestion": {
+      return {
+        ...state,
+        activeQuestion: state.activeQuestion + 1,
+        userAnswer: null,
+      };
+    }
   }
 }
 export default function App() {
