@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../App";
 
 const Progress = () => {
+  const { activeQuestion, points } = useContext(AppContext);
   return (
     <div className="progress">
-      <div className="progress-bar"></div>
+      <progress max={10} className="progress-bar" value={points}></progress>
 
       <div className="progress-info">
-        <span>Question 3 / 15</span>
-        <span>30 Points</span>
+        <span>Question {activeQuestion + 1} / 15</span>
+        <span>{points} Points</span>
       </div>
     </div>
   );

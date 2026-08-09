@@ -11,6 +11,8 @@ const initialState = {
   questions: [],
   status: "loading",
   activeQuestion: 0,
+  userAnswer: null,
+  points: 0,
 };
 function reducer(state, action) {
   switch (action.type) {
@@ -23,11 +25,22 @@ function reducer(state, action) {
     case "dataFeild": {
       return { ...state, status: "error" };
     }
+    case "userAnswerRecive": {
+      const isTrue =
+        action.payload === state.questions[state.activeQuestion].correctOption;
+      return {
+        ...state,
+        userAnswer: action.payload,
+        points: isTrue
+          ? state.points + state.questions[state.activeQuestion].points
+          : state.points,
+      };
+    }
   }
 }
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { status, questions, activeQuestion } = state;
+  const { status, questions, activeQuestion, userAnswer, points } = state;
 
   useEffect(function () {
     async function getData() {
@@ -46,11 +59,13 @@ export default function App() {
   }, []);
 
   return (
-    <AppContext.Provider value={{ questions, dispatch, activeQuestion }}>
+    <AppContext.Provider
+      value={{ questions, dispatch, activeQuestion, userAnswer, points }}
+    >
       <div className="app">
         {status === "ready" && <StartScreen />}
         {status === "loading" && <Spinner />}
-        {status === "loading" && <Spinner />}
+        {status === "error" && <Error />}
         {status === "active" && <QuestionBox />}
       </div>
     </AppContext.Provider>
